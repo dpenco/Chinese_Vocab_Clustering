@@ -3,7 +3,7 @@ This repo contains a Python script to divide the 现代汉语常用词表 (list 
 
 本仓库的Python脚本的功能是将“现代汉语常用词表”分别为至多20个词汇的子团。如果你是一位认真的中级中文学生，而你希望能够继续天天学习新的词汇，但你不知道哪里找新的词汇，那么本仓库完全适合你的要求。
 
-## Dependencies | 
+## Dependencies | 依赖
 * [FastText](https://fasttext.cc/docs/en/support.html)
 * [SciPy](https://docs.scipy.org/doc/scipy/reference/)
 * [NumPy](https://numpy.org/doc/)
@@ -33,9 +33,9 @@ To run the script in this repository, you will need to follow the instructions o
 
 为了执行本仓库的脚本，首先需要按照FastText的指示（请看本Readme的参考资料）下载并解压缩词向量。
 
-The code takes about 5 minutes to run on my computer, a 2017 model with an Intel i7 processor running on Windows Subsystem for Linux.
+The code takes about 2 minutes to run on my computer, a 2017 model with an Intel i7 processor running on Windows Subsystem for Linux.
 
-用我的个人电脑，脚本需要耗时大概5分钟的时间。我的个人电脑是一台2017年的，有英特尔i7处理器的电脑，而脚本是在适用于Linux的Windows子系统执行的。
+用我的个人电脑，脚本需要耗时大概2分钟的时间。我的个人电脑是一台2017年的，有英特尔i7处理器的电脑，而脚本是在适用于Linux的Windows子系统执行的。
 
 The code uses the same seed value for the randomization in the K-Means algorithm, so the code is deterministic. If you want to randomize it, simply remove the `random_state = rand_state` from every line of code that calls `KMeans`.
 
