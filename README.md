@@ -1,7 +1,36 @@
 # chinese-vocab-cluster
-This repo contains a Python script to divide the 现代汉语常用词表 (list of frequently used modern Chinese vocabulary) into groups of 20 words or less. If you are an intermediate student of Chinese and you want to continue studying new words daily, but aren't sure where to find new words to study, then this repo is ideally suited for you.
+If you're an intermediate Chinese student, you need to constantly grow your vocabulary by learning new words. But over time, it becomes harder to find new words to learn. When you do learn new words, it's easy to forget them because of how scattered they are: today your friend talked about their favorite pet, so you learned some new words about pets; yesterday, you read an article online that used a 成语 (idiom) that you did not know.
 
-本仓库的Python脚本的功能是将“现代汉语常用词表”分别为至多20个词汇的子团。如果你是一位认真的中级中文学生，而你希望能够继续天天学习新的词汇，但你不知道哪里找新的词汇，那么本仓库完全适合你的要求。
+如果你是中级的中文学生，你就一直要学新的词汇。但是你的中文水平越好，新的词汇越难找。而且，学了新的词汇会更容易忘掉因为它们都是很七七八八的。譬如，今天你的朋友聊了他最爱的宠物，所以你学了一些关于宠物的词汇；昨天，你读的一篇文章有一个你以前不知道的成语。
+
+When you try to learn vocabulary that is all scattered and unrelated, it is more difficult to remember long-term. On the other hand, if you learn words by theme, you might miss some domains entirely. For example, I forgot to study names of common chemicals until recently. These are the key challenges of Chinese language learning that this repo aims to solve.
+
+一方面是如果你试图学会很七七八八的词汇，就会更难以长期记得。另一方面，如果你按照主题学词汇，你可能就会错过一些你想不到的领域的词汇。譬如，我很久忘了学常见的化学词汇。这两个挑战是本仓库想解决的问题。
+
+In this repo, we take a list of the 56,000 most frequently used Chinese words, and programmatically divide it into categories of 20 words or less. The categories contain related words, so if you study 1 or 2 categories per day, it will be much easier for you to remember the new words. Because we use the 56,000 most common Chinese words, you won't miss any important words either!
+
+本仓库把56000个常用的中文词汇给程序性放在至多20个词汇的聚类。一个聚类所包含的词汇都是相关的。你可以每天学一两个聚类。这样会更容易记下新的词汇，因为是相关的。而且，因为本仓库使用的是56000最常用的中文词汇，你就不会错过任何常用的词汇。
+
+Not all the categories are perfect, but here are some examples of the categories that this code repo outputs for you:
+
+不是所有的聚类都完毕，不过以下例子都是本仓库的脚本输出的比较有逻辑的聚类：
+
+Category 2265: Continents, Countries, Regions, and Cities | 2265号聚类：洲，国家，地区，和城市
+澳大利亚 (Australia), 巴基斯坦 (Pakistan), 北美洲 (North America), 大西洋 (Atlantic Ocean), 哈萨克斯坦 (Kazakhstan), 呼和浩特 (Hohhot, Inner Mongolia), 加拿大 (Canada), 拉丁美洲 (Latin America), 马来西亚 (Malaysia), 孟加拉 (Bengal region), 莫斯科 (Moscow), 南美洲 (South America), 塔吉克斯坦 (Tajikistan), 太平洋 (Pacific Ocean), 乌鲁木齐 (Urumqi, Xinjiang), 新加坡 (Singapore), 伊斯兰堡 (Islamabad, Pakistan), 意大利 (Italy), 印度尼西亚 (Indonesia)
+
+Category 7044: Fingers | 7044号聚类：手指
+拇指 (thumb), 食指 (index finger), 手指 (finger), 小指 (pinky)
+
+Category 6928: Holidays | 6928号聚类：节日
+重阳节 (Double Nine Day, for celebrating elders), 倒计时 (to count down time, as on New Year's Eve), 端午节 (Dragon Boat Festival), 感恩节 (Thanksgiving), 古尔邦节 (Eid al-Adha), 国庆节 (Chinese National Day), 黄金周 (Golden Week, one of 2 week-long holidays in China, for 国庆节 and 春节), 教师节 (Teachers' Day), 母亲节 (Mothers' Day), 清明节 (Tomb Sweeping Day), 圣诞节 (Christmas), 圣诞卡 (Christmas card), 游园会 (a type of outdoor carnival), 元宵节 (Lantern Festival), 阅兵式 (military parade, as on 国庆节), 中秋节 (Mid-Autumn Festival)
+
+You can take the results from the `output.txt` file and study 1 or 2 categories per day to keep expanding your Chinese vocabulary. You can also make flashcards, or digital flashcards with Anki.
+
+你可以每天学习输出文件`output.txt`的一两个聚类。这样你可以一直扩展你的词汇知识。你还可以自己做记忆卡片，或者Anki APP的电子记忆卡片。
+
+Another benefit of this repo is that the `output.txt` file is sorted by the average frequency of words in a category. So, the categories with the most common words appear near the top of the file, with more obscure terms appearing near the end of the file.
+
+况且，输出文件`output.txt`的聚类是依平均频率排序。所以，最常见的词汇在`output.txt`初，而比较罕见的词汇在文件末。
 
 ## Dependencies | 依赖
 * [FastText](https://fasttext.cc/docs/en/support.html)
@@ -33,9 +62,9 @@ To run the script in this repository, you will need to follow the instructions o
 
 为了执行本仓库的脚本，首先需要按照FastText的指示（请看本Readme的参考资料）下载并解压缩词向量。
 
-The code takes about 2 minutes to run on my computer, a 2017 model with an Intel i7 processor running on Windows Subsystem for Linux.
+The code takes about 80 seconds to run on my computer, a 2017 model with an Intel i7 processor running on Windows Subsystem for Linux.
 
-用我的个人电脑，脚本需要耗时大概2分钟的时间。我的个人电脑是一台2017年的，有英特尔i7处理器的电脑，而脚本是在适用于Linux的Windows子系统执行的。
+用我的个人电脑，脚本需要耗时大概80秒钟的时间。我的个人电脑是一台2017年的，有英特尔i7处理器的电脑，而脚本是在适用于Linux的Windows子系统执行的。
 
 The code uses the same seed value for the randomization in the K-Means algorithm, so the code is deterministic. If you want to randomize it, simply remove the `random_state = rand_state` from every line of code that calls `KMeans`.
 
